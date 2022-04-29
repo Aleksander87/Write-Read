@@ -7,7 +7,36 @@
   <title>Document</title>
 </head>
 <body>
-   First <input id="name" value="" type="text">
-   Last <input id="name" value="" type="text">
+   First <input id="name1" value="" type="text">
+   Last <input id="name2" value="" type="text">
+  <br>
+  <input type="button" value="save" onclick="save_func()">
+  
+  <script>
+    function save_func() {
+      
+    let first = document.getElementById("name1").value;
+    let last = document.getElementById("name2").value;
+
+	  let data = [];
+	  data.push(first); // [0];
+	  data.push(last); // [1];
+	  
+	  let data_string = JSON.stringify(data);
+	  
+	  let file = new Blob([data_string],{type="text"})
+	  let anchor = document.createElement('a');
+	  anchor.href = URL.createObjectURL(file);
+      
+    }
+    
+    
+    
+  </script>
+  
+  
+  
+  
+  
 </body>
 </html>
